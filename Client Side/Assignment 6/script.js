@@ -46,3 +46,4 @@ const totalFoodSpent = foodExpenses.reduce((total, exp) => {
 
 console.log("Total Food Spent: $" + totalFoodSpent);
 
+
