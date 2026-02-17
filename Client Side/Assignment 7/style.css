@@ -1,0 +1,36 @@
+body {
+    background-image: url("galaxy.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+
+.items div {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-right: 10px;
+    padding: 8px 15px;
+    background: #1e90ff;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00bfff;
+}
+
+
+#receipt {
+    background: rgba(0, 0, 0, 0.7); 
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
