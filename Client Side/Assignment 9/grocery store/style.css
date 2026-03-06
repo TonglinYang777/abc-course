@@ -1,0 +1,298 @@
+/*
+CSS variables are defined inside :root so they can be reused
+throughout the entire stylesheet. This improves consistency
+and makes it easier to update colors later.
+*/
+:root {
+  --green: #1e7a3b;
+  --green-dark: #14572a;
+  --cream: #f7f6f2;
+  --card: #ffffff;
+  --text: #1b1f24;
+  --muted: #6a7480;
+  --line: #e7e9ee;
+  --danger: #b42318;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/*
+box-sizing: border-box ensures padding and borders
+are included inside element width calculations.
+This prevents layout issues.
+*/
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;        /* Removes default browser margin */
+  font-family: Arial, sans-serif;   /* Main font used across the page */
+  color: var(--text);         /* Default text color */
+  background: var(--cream);   /* Background color for entire page */
+}
+
+/*
+  A vertical gradient background creates a visual
+  brand identity for the store header.
+  */
+.header {
+  background: linear-gradient(180deg, var(--green) 0%, var(--green-dark) 100%);
+  color: white;
+  padding: 18px 0;
+}
+
+/* Container for header content */
+.header-inner {
+  width: min(1000px, 92vw);   /* Limits width for readability */
+  margin: 0 auto;     /* Centers content horizontally */
+
+  display: flex;     /* Flexbox layout */
+  align-items: center;      /* Vertical alignment */
+  justify-content: space-between;     /* Space between brand and badge */
+  gap: 12px;
+}
+
+/* Brand section containing logo and store name */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Store logo styling */
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Main page heading */
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Small descriptive tagline under store title */
+.tagline {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* Small badge indicating demo store */
+.badge {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 18px auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  /* Soft shadow adds visual depth */
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+
+/* Section headings */
+h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+}
+
+/* Instruction text */
+.hint {
+  margin: 0 0 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/*
+CSS Grid is used to create a responsive
+two-column layout for the product items.
+*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Individual product card */
+.item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #fff;
+}
+
+/* Product text container */
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Product name */
+.item-name {
+  font-weight: 700;
+}
+
+/* Product price */
+
+.item-price {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+input[type="number"] {
+  width: 84px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  outline: none;
+  font-size: 14px;
+}
+
+/* Highlight input when user focuses it */
+input[type="number"]:focus {
+  border-color: rgba(30, 122, 59, 0.55);
+}
+
+.actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;  /* Allows wrapping on small screens */
+
+  align-items: center;
+  gap: 10px;
+}
+
+/* Base button style */
+.btn {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* Primary action button */
+
+.btn.primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+
+/* Slight hover effect */
+
+.btn.primary:hover { filter: brightness(0.97); }
+
+/* Reset / warning button */
+.btn.danger {
+  background: #fff;
+  border-color: rgba(180, 35, 24, 0.35);
+  color: var(--danger);
+}
+
+.total-box {
+  margin-left: auto;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f3fbf6;
+  border: 1px solid rgba(30, 122, 59, 0.18);
+}
+
+/* Label for total */
+.total-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Total price value */
+.total-value {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.receipt-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Small explanatory text */
+
+.small-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Receipt display box */
+.receipt {
+  margin: 10px 0 0 0;
+  border: 1px dashed #cfd6df;
+  background: #fbfbfb;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 140px;
+  white-space: pre-wrap;
+  /*
+  Monospace fonts help receipts look
+  like traditional printed receipts.
+  */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+}
+
+.footer {
+  padding: 16px 0 22px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* Utility class for muted text */
+.muted { color: var(--muted); }
+
+/*
+This media query improves the layout on smaller screens.
+*/
+@media (max-width: 700px) {
+  /* Switch grid to single column */
+  .grid { grid-template-columns: 1fr; }
+  /* Make total box full width */
+  .total-box { margin-left: 0; width: 100%; justify-content: space-between; }
+}
